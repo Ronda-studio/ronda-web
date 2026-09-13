@@ -1,0 +1,205 @@
+/* ── FLOATING DYNAMIC ISLAND HEADER ─────────────────────── */
+.islandHeader {
+  position: fixed;
+  top: 1.2rem;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  pointer-events: none; /* Permite clicks a los lados de la isla */
+  padding: 0 1rem;
+}
+
+.islandContainer {
+  pointer-events: auto;
+  background: rgba(15, 23, 34, 0.78);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(167, 227, 193, 0.2);
+  border-radius: 9999px;
+  box-shadow:
+    0 16px 36px -8px rgba(0, 0, 0, 0.6),
+    0 0 24px -6px rgba(119, 238, 209, 0.15);
+  transition: border-radius 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  max-width: 820px;
+}
+
+.islandContainer:hover {
+  border-color: rgba(167, 227, 193, 0.35);
+  box-shadow:
+    0 20px 40px -8px rgba(0, 0, 0, 0.7),
+    0 0 30px -4px rgba(119, 238, 209, 0.22);
+}
+
+.islandExpanded {
+  border-radius: 28px;
+}
+
+.islandMainBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 0.4rem 0.5rem 0.4rem 1.2rem;
+  height: 52px;
+}
+
+/* LOGO */
+.headerLogo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.logo {
+  height: 28px;
+  width: 28px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 8px rgba(119, 238, 209, 0.4));
+}
+
+.logoName {
+  font-family: var(--font-family-heading, 'Outfit', sans-serif);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-dark, #f6f7f4);
+  letter-spacing: 0.02em;
+}
+
+/* DESKTOP NAV */
+.desktopNav {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  position: relative;
+}
+
+.navLink {
+  position: relative;
+  padding: 0.45rem 1rem;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: rgba(246, 247, 244, 0.75);
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.25s ease;
+  z-index: 1;
+}
+
+.navLink:hover {
+  color: #ffffff;
+}
+
+.activePill {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 9999px;
+  border: 1px solid rgba(167, 227, 193, 0.2);
+  z-index: -1;
+}
+
+/* CTA BUTTON */
+.ctaWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.islandContactBtn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--green-primary, #77eed1);
+  color: #0f1722;
+  border: none;
+  padding: 0.45rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.islandContactBtn:hover {
+  background: var(--green-hover, #5dbca5);
+  transform: scale(1.04);
+  box-shadow: 0 4px 14px rgba(119, 238, 209, 0.35);
+}
+
+/* MOBILE TOGGLE */
+.mobileToggle {
+  display: none;
+  background: transparent;
+  border: none;
+  color: var(--text-dark, #f6f7f4);
+  cursor: pointer;
+  padding: 0.4rem;
+  align-items: center;
+  justify-content: center;
+}
+
+/* MOBILE DROPDOWN */
+.mobileDropdown {
+  overflow: hidden;
+  border-top: 1px solid rgba(167, 227, 193, 0.1);
+}
+
+.mobileNavLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1.2rem 1.5rem 1.5rem 1.5rem;
+}
+
+.mobileNavLink {
+  color: rgba(246, 247, 244, 0.8);
+  text-decoration: none;
+  font-size: 1.05rem;
+  font-weight: 500;
+  padding: 0.5rem 0;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.mobileNavLink:hover {
+  color: var(--green-primary, #77eed1);
+}
+
+.mobileContactBtn {
+  margin-top: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  background: var(--green-primary, #77eed1);
+  color: #0f1722;
+  border: none;
+  padding: 0.75rem;
+  border-radius: 9999px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+/* ── RESPONSIVE ────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .islandContainer {
+    width: 100%;
+    max-width: 440px;
+  }
+
+  .desktopNav,
+  .ctaWrapper {
+    display: none;
+  }
+
+  .mobileToggle {
+    display: flex;
+  }
+}

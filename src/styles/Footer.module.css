@@ -1,0 +1,126 @@
+.footer {
+  color: white;
+  padding: 4rem 0 0 0;
+  margin-top: 4rem;
+}
+
+.footerContainer {
+  display: grid;
+  grid-template-columns: 2fr 1.5fr 1fr;
+  gap: 4rem;
+  margin-bottom: 3rem;
+  font-family: 'Inter', sans-serif;
+}
+
+.brandHeader {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+
+
+.centerLogo {
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 10px rgba(119, 238, 209, 0.4));
+  transition: transform 0.3s ease;
+}
+
+.circularBadge:hover .centerLogo {
+  transform: scale(1.15);
+}
+
+.brandText {
+  flex: 1;
+  min-width: 240px;
+  font-size: 5rem;
+
+}
+
+.footerBrand h3 {
+  font-size: 2.5rem;
+  color: var(--green-primary);
+  margin-bottom: 0.5rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+}
+
+.footerBrand p {
+  color: #9ca3af;
+  line-height: 1.6;
+  max-width: 400px;
+}
+
+.footerLinks {
+  display: flex;
+  gap: 3rem;
+}
+
+.linkGroup h4,
+.footerSocial h4 {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  color: white;
+}
+
+.linkGroup a {
+  display: block;
+  color: #9ca3af;
+  text-decoration: none;
+  margin-bottom: 0.8rem;
+  transition: all 0.3s ease;
+}
+
+.linkGroup a:hover {
+  color: var(--green-primary);
+  transform: translateX(4px);
+}
+
+.socialIcons {
+  display: flex;
+  gap: 1rem;
+}
+
+.socialIcons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.socialIcons a:hover {
+  background-color: var(--green-primary);
+  transform: translateY(-4px);
+}
+
+.footerBottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1.5rem 0;
+  text-align: center;
+}
+
+.footerBottom p {
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .footerContainer {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .footerLinks {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}

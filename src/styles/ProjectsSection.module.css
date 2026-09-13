@@ -1,0 +1,156 @@
+.projects {
+  background-color: var(--bg-primary);
+  margin-top: 1rem;
+}
+
+
+
+
+.sectionSubtitle {
+  text-align: center;
+  color: var(--text-medium);
+  margin-bottom: 3.5rem;
+  font-size: 1.1rem;
+}
+
+/* Grid optimizada: centrado y ancho visualmente armónico */
+.projectsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 480px));
+  justify-content: center;
+  gap: 2.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.projectCard {
+  background: var(--bg-secondary);
+  border-radius: 24px;
+  padding: 2.5rem 2.2rem;
+  min-height: 390px;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.2),
+              box-shadow 0.4s ease,
+              border-color 0.4s ease;
+  will-change: transform;
+}
+
+
+
+.projectCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--card-image) center center / cover no-repeat;
+  opacity: 0.12;
+  filter: grayscale(30%);
+  transform: scale(1);
+  transition: opacity 0.5s ease, transform 0.6s cubic-bezier(0.2, 0, 0.2, 1), filter 0.5s ease;
+  z-index: 0;
+}
+
+.cardContent {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+}
+
+/* Hover de tarjeta: elevación 3D, glow perimetral y zoom suave */
+.projectCard:hover {
+  transform: translateY(-8px) scale(1.015);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.45), 0 0 25px rgba(119, 238, 209, 0.18);
+  border-color: rgba(119, 238, 209, 0.4);
+}
+
+.projectCard:hover::before {
+  opacity: 0.5;
+  transform: scale(1.08);
+  filter: grayscale(0%);
+}
+
+.projectHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.2rem;
+}
+
+.projectHeader h3 {
+  color: var(--text-dark);
+  font-size: 1.4rem;
+  font-weight: 700;
+  transition: color 0.3s ease;
+}
+
+.projectCard:hover .projectHeader h3 {
+  color: var(--green-primary);
+}
+
+.projectLinks {
+  display: flex;
+  gap: 0.85rem;
+}
+
+.projectLinks a {
+  color: var(--text-medium);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.projectLinks a:hover {
+  color: var(--green-primary);
+  background: rgba(119, 238, 209, 0.15);
+  border-color: rgba(119, 238, 209, 0.4);
+  transform: translateY(-2px);
+}
+
+.projectDescription {
+  color: #94a3b8;
+  line-height: 1.65;
+  margin-bottom: 1.8rem;
+  font-size: 0.98rem;
+}
+
+.techStack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1.5rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.techBadge {
+  background-color: rgba(119, 238, 209, 0.1);
+  border: 1px solid rgba(119, 238, 209, 0.2);
+  color: var(--green-primary);
+  padding: 0.3rem 0.85rem;
+  border-radius: 9999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+@media (max-width: 768px) {
+  .projectsGrid {
+    grid-template-columns: 1fr;
+    padding: 0 1rem;
+  }
+}

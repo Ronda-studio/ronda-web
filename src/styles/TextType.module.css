@@ -1,0 +1,31 @@
+.textTypeWrapper {
+  display: inline-block;
+  min-height: 1.15em;
+  min-width: 1ch;
+  position: relative;
+  vertical-align: baseline;
+  color: inherit;
+  -webkit-text-fill-color: currentColor;
+}
+
+.cursor {
+  display: inline-block;
+  color: var(--green-primary);
+  -webkit-text-fill-color: var(--green-primary);
+  margin-left: 2px;
+  font-weight: 300;
+  animation: blink 0.9s infinite step-start;
+}
+
+.cursorIdle {
+  opacity: 0.6;
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}

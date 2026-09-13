@@ -1,0 +1,203 @@
+.stickyHero {
+  position: relative;
+  background-color: var(--bg-primary);
+  padding: 0
+}
+
+.mouseSpotlight {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  transition: background 0.1s ease;
+}
+
+.colorBendsWrapper {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+.stickyContainer {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.colorBendsWrapper {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.logoWrapper {
+  margin-bottom: 3rem;
+  z-index: 2;
+}
+
+.logoImage {
+  height: 100px;
+  filter: drop-shadow(0 10px 15px rgba(151, 215, 121, 0.2));
+}
+
+.splitTextContainer {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+  z-index: 2;
+}
+
+.leftText h1,
+.rightText h1 {
+  font-size: 4.5rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  white-space: nowrap;
+}
+
+.leftText h1 {
+  color: var(--text-dark);
+}
+
+.gradientText {
+  background: linear-gradient(135deg, var(--green-primary) 0%, var(--green-hover) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.badgeContainer {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  z-index: 2;
+}
+
+.techBadge {
+  background: #a7e3c187;
+  border: 1px solid rgba(151, 215, 121, 0.2);
+  color: var(--text-medium);
+  padding: 0.5rem 1.2rem;
+  border-radius: 9999px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(10px);
+}
+
+.scrollHint {
+  position: absolute;
+  bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+  z-index: 2;
+}
+
+.scrollHint span {
+  color: var(--text-medium);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.mouseIcon {
+  width: 26px;
+  height: 40px;
+  border: 2px solid var(--text-medium);
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  padding-top: 6px;
+}
+
+.mouseWheel {
+  width: 4px;
+  height: 8px;
+  background-color: var(--green-primary);
+  border-radius: 2px;
+  animation: scrollWheel 1.5s infinite;
+}
+
+@keyframes scrollWheel {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(12px);
+    opacity: 0;
+  }
+}
+
+.spacer {
+  height: 75vh;
+}
+
+.transitionVeil {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+  z-index: 15;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.transitionGlow {
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  max-width: 900px;
+  height: 100px;
+  background: radial-gradient(ellipse at center, rgba(119, 238, 209, 0.3) 0%, rgba(167, 227, 193, 0.1) 45%, transparent 75%);
+  filter: blur(40px);
+  pointer-events: none;
+}
+
+.transitionCurve {
+  width: 100%;
+  height: 90px;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .logoImage {
+    height: 80px;
+  }
+
+  .leftText h1,
+  .rightText h1 {
+    font-size: 2.5rem;
+    white-space: normal;
+  }
+
+  .splitTextContainer {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0 1rem;
+  }
+
+  .badgeContainer {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
