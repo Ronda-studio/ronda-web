@@ -44,8 +44,13 @@ const ProjectCard = ({ project, index }) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-40px" }}
       transition={{ duration: 0.5, delay: index * 0.15 }}
-      style={{ '--card-image': `url(${project.image})` }}
     >
+      <img 
+        src={project.image} 
+        alt={`Proyecto de software: ${project.title}`} 
+        className={styles.projectImage} 
+        loading="lazy" 
+      />
       {/* Spotlight cursor glow */}
       <div 
         className={styles.cardSpotlight} 
@@ -60,15 +65,13 @@ const ProjectCard = ({ project, index }) => {
           <div className={styles.projectHeader}>
             <h3>{project.title}</h3>
             <div className={styles.projectLinks}>
-              <a href={project.demo} target="_blank" rel="noopener noreferrer" title="Ver">
+              <a href={project.demo} target="_blank" rel="noopener noreferrer" title={`Ver proyecto ${project.title}`}>
                 <ExternalLink size={20} />
               </a>
             </div>
           </div>
           <p className={styles.projectDescription}>{project.description}</p>
         </div>
-
-
       </div>
     </motion.div>
   );
@@ -85,7 +88,7 @@ const ProjectsSection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          Proyectos que construimos
+          Proyectos de Desarrollo de Software
         </motion.h2>
         <motion.p 
           className={styles.sectionSubtitle}
