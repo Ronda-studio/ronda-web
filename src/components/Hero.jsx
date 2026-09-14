@@ -126,14 +126,6 @@ const Hero = () => {
           </motion.div>
         </div>
 
-        <motion.p
-  className={styles.seoSubtitle}
-  variants={itemVariants}
-  style={{ opacity: textOpacity }}
->
-  Desarrollo de software a medida, aplicaciones web y automatización de procesos.
-</motion.p>
-
         <motion.div 
           className={styles.badgeContainer}
           variants={itemVariants}
