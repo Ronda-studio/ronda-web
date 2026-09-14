@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import styles from '../styles/SplashScreen.module.css';
-import logoImg from '../assets/logo-ronda.png';
+import logoImg from '../assets/logo-ronda.webp';
 
 const SplashScreen = ({ onComplete }) => {
   const [progress, setProgress] = useState(0);

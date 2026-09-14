@@ -1,7 +1,7 @@
 import styles from '../styles/WhySection.module.css';
 import { motion } from 'framer-motion';
 import TiltedCard from './TiltedCard';
-import communityCardImg from '../assets/licha.png';
+import communityCardImg from '../assets/rondateam.webp';
 
 const WhySection = () => {
   return (
@@ -30,8 +30,8 @@ const WhySection = () => {
               containerWidth="440px"
               imageHeight="320px"
               imageWidth="440px"
-              rotateAmplitude={14}
-              scaleOnHover={1.08}
+              rotateAmplitude={22}
+              scaleOnHover={1.18}
               showMobileWarning={false}
               showTooltip={false}
               displayOverlayContent

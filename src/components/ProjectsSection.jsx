@@ -10,14 +10,14 @@ const projects = [
     title: "HCD Alberdi",
     description: "Portal legislativo para acceso a la información pública y sistema de gestión de archivos para proyectos e iniciativas.",
     demo: "https://hcdalberdi.com.ar/",
-    image: "./src/assets/projects.png"
+    image: "./src/assets/hcdalberdi-ronda.webp"
   },
   {
     id: 2,
     title: "Tallerio",
     description: "Sistema nacido después de escuchar los desafíos diarios de talleres y fabricantes. Menos planillas. Más control. Más tiempo para producir.",
     demo: "#",
-    image: "./src/assets/tallerio.png"
+    image: "./src/assets/tallerio-ronda.webp"
   }
 ];
 

@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronRight, Menu, X } from 'lucide-react';
 import styles from '../styles/Header.module.css';
 import VariableProximity from './VariableProximity';
-import logoImg from '../assets/logo-ronda.png';
+import logoImg from '../assets/logo-ronda.webp';
 
 const HERO_ANIM_END = 650;
 

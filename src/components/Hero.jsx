@@ -4,7 +4,7 @@ import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import styles from '../styles/Hero.module.css';
 import ColorBends from './ColorBends';
 import { CornerDownRight, Users} from 'lucide-react'
-import logoronda from '../assets/logo-ronda.png';
+import logoronda from '../assets/logo-ronda.webp';
 
 const Hero = () => {
   const containerRef = useRef(null);
