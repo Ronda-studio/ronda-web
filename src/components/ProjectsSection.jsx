@@ -3,6 +3,9 @@ import styles from '../styles/ProjectsSection.module.css';
 import { ExternalLink } from 'lucide-react';
 import { FaGithub } from 'react-icons/fa';
 import { motion } from 'framer-motion';
+import hcdalberdi from '../assets/hcdalberdi-ronda.webp'
+import tallerio from '../assets/tallerio-ronda.webp'
+
 
 const projects = [
   {  
@@ -10,14 +13,14 @@ const projects = [
     title: "HCD Alberdi",
     description: "Portal legislativo para acceso a la información pública y sistema de gestión de archivos para proyectos e iniciativas.",
     demo: "https://hcdalberdi.com.ar/",
-    image: "./src/assets/hcdalberdi-ronda.webp"
+    image: hcdalberdi
   },
   {
     id: 2,
     title: "Tallerio",
     description: "Sistema nacido después de escuchar los desafíos diarios de talleres y fabricantes. Menos planillas. Más control. Más tiempo para producir.",
     demo: "#",
-    image: "./src/assets/tallerio-ronda.webp"
+    image: tallerio
   }
 ];
 
