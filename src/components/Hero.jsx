@@ -127,12 +127,12 @@ const Hero = () => {
         </div>
 
         <motion.p
-          className={styles.seoSubtitle}
-          variants={itemVariants}
-          style={{ opacity: textOpacity }}
-        >
-          Diseño y <strong>desarrollo de software a medida</strong>, <strong>aplicaciones web</strong>, y automatización de sistemas para organizaciones.
-        </motion.p>
+  className={styles.seoSubtitle}
+  variants={itemVariants}
+  style={{ opacity: textOpacity }}
+>
+  Desarrollo de software a medida, aplicaciones web y automatización de procesos.
+</motion.p>
 
         <motion.div 
           className={styles.badgeContainer}
@@ -146,16 +146,7 @@ const Hero = () => {
           </ScrollLink>
         </motion.div>
         
-        <motion.div 
-          className={styles.scrollHint}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.5, duration: 1 }}
-        >
-          
-         
-          <span>Descubre cómo</span>
-        </motion.div>
+       
       </motion.div>
       
       {/* Spacer to allow scrolling through the sticky effect */}
