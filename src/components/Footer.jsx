@@ -82,7 +82,7 @@ const Footer = () => {
               <FaGithub />
             </a>
 
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.linkedin.com/company/rondastudio" target="_blank" rel="noopener noreferrer">
               <FaLinkedin />
             </a>
             <a href="https://instagram.com/ronda.it" target="_blank" rel="noopener noreferrer">
