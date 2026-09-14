@@ -22,15 +22,33 @@ const Hero = () => {
   // Framer Motion Scroll hooks
   const { scrollY } = useScroll();
   
+  // Detección de dispositivo móvil para animaciones responsive
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(max-width: 768px)');
+    setIsMobile(mediaQuery.matches);
+    const handleMediaChange = (e) => setIsMobile(e.matches);
+    
+    // Compatibilidad para navegadores más antiguos que no soportan addEventListener en matchMedia
+    if (mediaQuery.addEventListener) {
+      mediaQuery.addEventListener('change', handleMediaChange);
+      return () => mediaQuery.removeEventListener('change', handleMediaChange);
+    } else {
+      mediaQuery.addListener(handleMediaChange);
+      return () => mediaQuery.removeListener(handleMediaChange);
+    }
+  }, []);
+  
   // Smooth spring physics for scroll
   const smoothScrollY = useSpring(scrollY, { stiffness: 100, damping: 20 });
 
-  // Transform values based on scroll
-  const logoScale = useTransform(smoothScrollY, [0, 800], [1, 0.5]);
-  const logoY = useTransform(smoothScrollY, [0, 800], [0, -150]);
+  // Transform values based on scroll y resolución (Mobile-First approach)
+  const logoScale = useTransform(smoothScrollY, [0, 800], [1, isMobile ? 0.75 : 0.5]);
+  const logoY = useTransform(smoothScrollY, [0, 800], [0, isMobile ? -80 : -150]);
   
-  const leftX = useTransform(smoothScrollY, [0, 800], [0, -400]);
-  const rightX = useTransform(smoothScrollY, [0, 800], [0, 400]);
+  const leftX = useTransform(smoothScrollY, [0, 800], [0, isMobile ? -100 : -400]);
+  const rightX = useTransform(smoothScrollY, [0, 800], [0, isMobile ? 100 : 400]);
   const textOpacity = useTransform(smoothScrollY, [0, 500], [1, 0]);
 
   // Smooth exit transition for the entire hero into the next section
