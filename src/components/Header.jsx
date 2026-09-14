@@ -47,7 +47,7 @@ const Header = () => {
               transition: 'opacity 0.4s ease'
             }}
           >
-            <img src={logoImg} alt="Ronda" className={styles.logo} />
+            <img src={logoImg} alt="Logo Ronda" className={styles.logo} width="40" height="40" fetchPriority="high" />
             <VariableProximity
               label="Ronda"
               className={styles.logoName}
