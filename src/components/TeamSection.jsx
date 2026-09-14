@@ -58,6 +58,8 @@ const TeamSection = () => {
               key={member.id} 
               className={styles.teamCard}
               style={{ backgroundImage: `url(${member.image})` }}
+              role="img"
+              aria-label={`Foto de ${member.name}, ${member.role} en Ronda`}
               initial={{ opacity: 0, y: 60, rotateX: -15 }}
               whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
               viewport={{ once: true, margin: "-50px" }}

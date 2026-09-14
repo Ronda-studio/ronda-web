@@ -44,7 +44,7 @@ const SplashScreen = ({ onComplete }) => {
           transition={{ duration: 1.85, ease: 'easeOut' }}
         >
           <div className={styles.glowAura} />
-          <img src={logoImg} alt="Ronda" className={styles.logoImage} />
+          <img src={logoImg} alt="Logo Ronda - Desarrollo Web y Soluciones" className={styles.logoImage} width="80" height="80" />
         </motion.div>
 
         {/* Título y Tagline */}
@@ -54,7 +54,7 @@ const SplashScreen = ({ onComplete }) => {
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.2, duration: 1.5 }}
         >
-          <h1 className={styles.brandTitle}>Ronda</h1>
+          <div className={styles.brandTitle}>Ronda</div>
           
         </motion.div>
 

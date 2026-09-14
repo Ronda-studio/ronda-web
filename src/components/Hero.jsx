@@ -92,29 +92,47 @@ const Hero = () => {
             transparent
           />
         </div>
-        <motion.div 
-          className={styles.logoWrapper}
-          style={{ scale: logoScale, y: logoY }}
-        >
-          <img src={logoronda} alt="Ronda" className={styles.logoImage} />
-        </motion.div>
+        <motion.div
+  className={styles.logoWrapper}
+  style={{ scale: logoScale, y: logoY }}
+>
+  <img
+    src={logoronda}
+    alt="Logo Ronda - Desarrollo de Software y Soluciones Digitales"
+    className={styles.logoImage}
+    width="100"
+    height="100"
+    fetchPriority="high"
+  />
+</motion.div>
         
         <div className={styles.splitTextContainer}>
+          <h1 className={styles.visuallyHidden}>
+            Ronda: Desarrollo de software a medida, aplicaciones web y soluciones digitales en Tucumán
+          </h1>
           <motion.div 
             className={styles.leftText}
             style={{ x: leftX, opacity: textOpacity }}
             variants={itemVariants}
           >
-            <h1>Toda solución comienza</h1>
+            <span className={styles.mainTitle} aria-hidden="true">Toda solución comienza</span>
           </motion.div>
           <motion.div 
             className={styles.rightText}
             style={{ x: rightX, opacity: textOpacity }}
             variants={itemVariants}
           >
-            <h1 className={styles.gradientText}>en una Ronda.</h1>
+            <span className={`${styles.mainTitle} ${styles.gradientText}`} aria-hidden="true">en una Ronda.</span>
           </motion.div>
         </div>
+
+        <motion.p
+          className={styles.seoSubtitle}
+          variants={itemVariants}
+          style={{ opacity: textOpacity }}
+        >
+          Diseño y <strong>desarrollo de software a medida</strong>, <strong>aplicaciones web</strong>, y automatización de sistemas para organizaciones.
+        </motion.p>
 
         <motion.div 
           className={styles.badgeContainer}
