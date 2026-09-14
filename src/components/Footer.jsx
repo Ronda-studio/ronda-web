@@ -7,9 +7,9 @@ import logoImg from '../assets/logo-ronda.webp';
 
 const Footer = () => {
   return (
-    <section as="footer" className={styles.footer}>
+    <footer className={styles.footer}>
       <div className={`container ${styles.footerContainer}`}>
-        <motion.div 
+        <motion.div
           className={styles.footerBrand}
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -24,24 +24,30 @@ const Footer = () => {
               radius={62}
               className={styles.circularBadge}
             >
-              <img src={logoImg} alt="Ronda" className={styles.centerLogo} />
+              <img
+                src={logoImg}
+                alt="Logo Ronda - Desarrollo de Software"
+                className={styles.centerLogo}
+                loading="lazy"
+                width="80"
+                height="80"
+              />
             </CircularText>
-            <div className={styles.brandText}>
 
-            <VariableProximity
-            label="Ronda"
-            className={styles.logoName}
-            fromWeight={500}
-            toWeight={1110}
-            radius={90}
-            falloff="gaussian"
-             />
-              
+            <div className={styles.brandText}>
+              <VariableProximity
+                label="Ronda"
+                className={styles.logoName}
+                fromWeight={500}
+                toWeight={1110}
+                radius={90}
+                falloff="gaussian"
+              />
             </div>
           </div>
         </motion.div>
-        
-        <motion.div 
+
+        <motion.div
           className={styles.footerLinks}
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -54,15 +60,15 @@ const Footer = () => {
             <a href="#projects">Proyectos</a>
             <a href="#team">Equipo</a>
           </div>
-          
+
           <div className={styles.linkGroup}>
             <h4>Legal</h4>
             <a href="#">Términos y Condiciones</a>
             <a href="#">Política de Privacidad</a>
           </div>
         </motion.div>
-        
-        <motion.div 
+
+        <motion.div
           className={styles.footerSocial}
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -70,10 +76,12 @@ const Footer = () => {
           transition={{ duration: 0.6, delay: 0.4 }}
         >
           <h4>Síguenos</h4>
+
           <div className={styles.socialIcons}>
             <a href="https://github.com/Ronda-studio" target="_blank" rel="noopener noreferrer">
               <FaGithub />
             </a>
+
             <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
               <FaLinkedin />
             </a>
@@ -83,8 +91,8 @@ const Footer = () => {
           </div>
         </motion.div>
       </div>
-      
-      <motion.div 
+
+      <motion.div
         className={styles.footerBottom}
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -93,7 +101,7 @@ const Footer = () => {
       >
         <p>&copy; {new Date().getFullYear()} Ronda. Todos los derechos reservados.</p>
       </motion.div>
-    </section>
+    </footer>
   );
 };
 

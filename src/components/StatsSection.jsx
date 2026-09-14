@@ -50,7 +50,7 @@ const StatsSection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          Nuestro trabajo en números
+          Impacto de nuestras Soluciones Digitales
         </motion.h2>
         <div className={styles.statsGrid}>
           {stats.map((stat, index) => (
