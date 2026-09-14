@@ -1,8 +1,8 @@
 import styles from '../styles/TeamSection.module.css';
 import { FaGithub, FaLinkedin} from 'react-icons/fa';
 import { motion } from 'framer-motion';
-import  agustinpintor from '../assets/agustin-pintor.png';
-import lisandrosiri from '../assets/lisandrosiri2.png';
+import  agustinpintor from '../assets/agustinpintor-ronda.webp';
+import lisandrosiri from '../assets/lisandrosiri-ronda.webp';
 
 const team = [
   {

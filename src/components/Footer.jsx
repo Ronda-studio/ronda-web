@@ -1,9 +1,9 @@
 import styles from '../styles/Footer.module.css';
-import { FaGithub, FaLinkedin, FaTwitter, FaInstagram } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaInstagram } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import CircularText from './CircularText';
 import VariableProximity from './VariableProximity';
-import logoImg from '../assets/logo-ronda.png';
+import logoImg from '../assets/logo-ronda.webp';
 
 const Footer = () => {
   return (
@@ -85,11 +85,6 @@ const Footer = () => {
             <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
               <FaLinkedin />
             </a>
-
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-              <FaTwitter />
-            </a>
-
             <a href="https://instagram.com/ronda.it" target="_blank" rel="noopener noreferrer">
               <FaInstagram />
             </a>

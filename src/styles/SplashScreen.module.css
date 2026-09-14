@@ -36,7 +36,7 @@
   width: 120px;
   height: 120px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(119, 238, 209, 0.4) 0%, rgba(167, 227, 193, 0.1) 60%, transparent 70%);
+  background: radial-gradient(circle, rgba(119, 238, 209, 0.2) 0%, rgba(167, 227, 193, 0.1) 30%, transparent 50%);
   filter: blur(20px);
   animation: pulseAura 2s ease-in-out infinite alternate;
 }
