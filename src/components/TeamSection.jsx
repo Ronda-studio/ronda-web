@@ -1,6 +1,8 @@
 import styles from '../styles/TeamSection.module.css';
 import { FaGithub, FaLinkedin} from 'react-icons/fa';
 import { motion } from 'framer-motion';
+import  agustinpintor from '../assets/agustin-pintor.png';
+import lisandrosiri from '../assets/lisandrosiri2.png';
 
 const team = [
   {
@@ -8,16 +10,16 @@ const team = [
     name: "Lisandro Siri",
     role: "Co-Founder",
     github: "https://github.com/lisandrosiri",
-    linkedin: "https://linkedin.com/in/lisandrosiri",
-    image: "src/assets/licha.png"
+    linkedin: "https://www.linkedin.com/in/lisandro-rene-siri-b5099b306/",
+    image: lisandrosiri
   },
   {
     id: 2,
     name: "Agustín Pintor",
     role: "Co-Founder",
-    github: "https://github.com/gabrielpelegrina",
-    linkedin: "https://linkedin.com/in/gabrielpelegrina",
-    image: "https://via.placeholder.com/200x200?text=GP"
+    github: "https://github.com/PintorAgustin",
+    linkedin: "https://www.linkedin.com/in/agustin-pintor/",
+    image: agustinpintor
   },
 ];
 
@@ -47,7 +49,7 @@ const TeamSection = () => {
           Dos estudiantes de ingeniería, un objetivo:
         </motion.h3>
         <p>
-          Crear soluciones digitales que transformen la manera en que las personas interactúan con la tecnología, haciendo que la experiencia sea más intuitiva, eficiente y agradable.
+          Desarrollar soluciones reales, creemos que las buenas ideas no dependen de donde nacen. Dependen de las personas que deciden construirlas. Ronda es nuestra forma de demostrarlo.
         </p>
        </div>  
         <div className={styles.teamGrid}>

@@ -3,6 +3,7 @@ import { FaGithub, FaLinkedin, FaTwitter, FaInstagram } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import CircularText from './CircularText';
 import VariableProximity from './VariableProximity';
+import logoImg from '../assets/logo-ronda.png';
 
 const Footer = () => {
   return (
@@ -23,7 +24,7 @@ const Footer = () => {
               radius={62}
               className={styles.circularBadge}
             >
-              <img src="src/assets/logo-ronda.png" alt="Ronda" className={styles.centerLogo} />
+              <img src={logoImg} alt="Ronda" className={styles.centerLogo} />
             </CircularText>
             <div className={styles.brandText}>
 
@@ -70,7 +71,7 @@ const Footer = () => {
         >
           <h4>Síguenos</h4>
           <div className={styles.socialIcons}>
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/Ronda-studio" target="_blank" rel="noopener noreferrer">
               <FaGithub />
             </a>
             <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">

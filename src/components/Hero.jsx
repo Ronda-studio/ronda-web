@@ -4,6 +4,7 @@ import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import styles from '../styles/Hero.module.css';
 import ColorBends from './ColorBends';
 import { CornerDownRight, Users} from 'lucide-react'
+import logoronda from '../assets/logo-ronda.png';
 
 const Hero = () => {
   const containerRef = useRef(null);
@@ -95,7 +96,7 @@ const Hero = () => {
           className={styles.logoWrapper}
           style={{ scale: logoScale, y: logoY }}
         >
-          <img src="src/assets/logo-ronda.png" alt="Ronda" className={styles.logoImage} />
+          <img src={logoronda} alt="Ronda" className={styles.logoImage} />
         </motion.div>
         
         <div className={styles.splitTextContainer}>

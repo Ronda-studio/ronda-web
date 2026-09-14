@@ -1,26 +1,70 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import styles from '../styles/ContanctForm.module.css';
 import { motion } from 'framer-motion';
 import TextType from './TextType';
 
 
 const ContactForm = () => {
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
-  const [status, setStatus] = useState('');
+  const [formData, setFormData] = useState({ 
+    name: '',
+    email: '',
+    description: '' 
+    });
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [isSuccess, setIsSuccess] = useState(false);
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setStatus('enviando');
-    // Simulate API call
-    setTimeout(() => {
-      setStatus('enviado');
-      setFormData({ name: '', email: '', message: '' });
-      setTimeout(() => setStatus(''), 3000);
-    }, 1500);
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+  
+  // Validación (igual que antes)
+  if (!formData.name || !formData.email || !formData.description) {
+    alert("Por favor complete todos los campos obligatorios.");
+    return;
+  }
+
+
+
+  setIsSubmitting(true);
+
+  try {
+    // ✅ Reemplazá esta URL con la que copiaste en el Paso 3
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyV59fwCcnn_LOkie7qWRVxERJ4D6cfzBXegOmBe90Onv1J8yh7c4qIWOZbIKnXd7Fy/exec";
+    
+    const response = await fetch(SCRIPT_URL, {
+      method: 'POST', 
+      headers: {
+        'Content-Type': 'text/plain;charset=utf-8',
+      },
+      body: JSON.stringify(formData)
+    });
+
+    const result = await response.json();
+    if(result.success) {
+      setIsSubmitting(false);
+      setIsSuccess(true);
+    }else {
+      alert(result.error || "Hubo un error al enviar el formulario. Por favor intentá de nuevo.");
+      setIsSubmitting(false);
+    }
+  } catch (error)  { console.error("Error al enviar:", error);
+  alert("Hubo un error al enviar el formulario. Por favor intentá de nuevo.");
+  setIsSubmitting(false);
+  }
+};
+
+ const resetForm = () => {
+    setFormData({
+      name: '',
+      email: '',
+      description: ''
+    });
+    ;
+    setIsSuccess(false);
   };
 
   return (
@@ -64,13 +108,15 @@ const ContactForm = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
+
           <form onSubmit={handleSubmit} className={styles.form}>
             <div className={styles.inputGroup}>
-              <label htmlFor="name">Nombre</label>
+              <label className="form-label">Nombre</label>
               <input 
                 type="text" 
                 id="name" 
                 name="name" 
+                className="form-input"
                 value={formData.name}
                 onChange={handleChange}
                 required 
@@ -79,11 +125,12 @@ const ContactForm = () => {
             </div>
             
             <div className={styles.inputGroup}>
-              <label htmlFor="email">Email</label>
+              <label className="form-label">Email</label>
               <input 
                 type="email" 
                 id="email" 
                 name="email" 
+                className="form-input"
                 value={formData.email}
                 onChange={handleChange}
                 required 
@@ -92,12 +139,13 @@ const ContactForm = () => {
             </div>
             
             <div className={styles.inputGroup}>
-              <label htmlFor="message">Mensaje</label>
+              <label className="form-label">Mensaje</label>
               <textarea 
-                id="message" 
-                name="message" 
+                id="description" 
+                name="description" 
+                className="form-input"
                 rows="4" 
-                value={formData.message}
+                value={formData.description}
                 onChange={handleChange}
                 required 
                 placeholder="Háblanos de tu idea..."
@@ -107,11 +155,21 @@ const ContactForm = () => {
             <motion.button 
               type="submit" 
               className={styles.submitBtn}
-              disabled={status === 'enviando'}
+              disabled={isSubmitting}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              {status === 'enviando' ? 'Enviando...' : status === 'enviado' ? '¡Mensaje Enviado!' : 'Enviar Mensaje'}
+              {isSubmitting ? (
+               <>
+               <p>Procesando envio...</p>
+               </> 
+                ) :(
+                 <>
+                     Contactar
+                    </> 
+                )
+
+              }
             </motion.button>
           </form>
         </motion.div>
