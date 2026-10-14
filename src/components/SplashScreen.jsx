@@ -33,11 +33,19 @@ const SplashScreen = ({ onComplete }) => {
       initial={{ opacity: 1 }}
       exit={{
         y: '-100%',
-        transition: { duration: 1.85, ease: [0.76, 0, 0.24, 1] }
+        transition: { duration: 2.35, ease: [0.76, 0, 0.24, 1] }
       }}
     >
       <div className={styles.logoWrapper}>
-        <video src={videologo} alt="Logo" className={styles.logo} autoPlay muted  />
+        <video
+          src={videologo}
+          className={styles.logo}
+          autoPlay
+          muted
+          playsInline
+          webkit-playsinline="true"
+          preload="auto"
+        />
       </div>
           
       </motion.div>
