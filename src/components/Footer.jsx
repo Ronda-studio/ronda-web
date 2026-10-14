@@ -58,7 +58,10 @@ const Footer = () => {
             <h4>Navegación</h4>
             <a href="#hero">Inicio</a>
             <a href="#projects">Proyectos</a>
+            <a href="#process">Proceso</a>
             <a href="#team">Equipo</a>
+            <a href="#faq">FAQ</a>
+            <a href="#contact">Contacto</a>
           </div>
 
           <div className={styles.linkGroup}>

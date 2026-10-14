@@ -5,6 +5,8 @@ import styles from '../styles/Hero.module.css';
 import ColorBends from './ColorBends';
 import { CornerDownRight, Users} from 'lucide-react'
 import logoronda from '../assets/logo-ronda.webp';
+import team from '../assets/1014.mp4';
+import ScrollExpand from './ScrollExpand';
 
 const Hero = () => {
   const containerRef = useRef(null);
@@ -81,70 +83,18 @@ const Hero = () => {
      />
       <div className="gridOverlay" />
 
-      <motion.div 
-        className={styles.stickyContainer}
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
-        style={{
-          opacity: heroExitOpacity,
-          scale: heroExitScale,
-          y: heroExitY
-        }}
-      >
-              {/* ColorBends animated background */}
-        <div className={styles.colorBendsWrapper}>
-          <ColorBends
-            colors={["#a7e3c1", "#6eeef2", "#97d779", "#1a2e1a"]}
-            rotation={97}
-            speed={0.2}
-            scale={1}
-            frequency={1}
-            warpStrength={1}
-            mouseInfluence={0.6}
-            noise={0.1}
-            parallax={0.4}
-            iterations={2}
-            intensity={0.6}
-            bandWidth={6}
-            transparent
-          />
-        </div>
-        <motion.div
-  className={styles.logoWrapper}
-  style={{ scale: logoScale, y: logoY }}
->
-  <img
-    src={logoronda}
-    alt="Logo Ronda - Desarrollo de Software y Soluciones Digitales"
-    className={styles.logoImage}
-    width="100"
-    height="100"
-    fetchPriority="high"
-  />
-</motion.div>
-        
-        <div className={styles.splitTextContainer}>
-          <h1 className={styles.visuallyHidden}>
-            Ronda: Desarrollo de software a medida, aplicaciones web y soluciones digitales en Tucumán
-          </h1>
-          <motion.div 
-            className={styles.leftText}
-            style={{ x: leftX, opacity: textOpacity }}
-            variants={itemVariants}
-          >
-            <span className={styles.mainTitle} aria-hidden="true">Toda solución comienza</span>
-          </motion.div>
-          <motion.div 
-            className={styles.rightText}
-            style={{ x: rightX, opacity: textOpacity }}
-            variants={itemVariants}
-          >
-            <span className={`${styles.mainTitle} ${styles.gradientText}`} aria-hidden="true">en una Ronda.</span>
-          </motion.div>
-        </div>
 
-        <motion.div 
+<ScrollExpand
+  src={team}
+  alt="Product hero"
+  title="Ronda"
+  scrollHint="Scroll inside the frame"
+  useWindowScroll
+>
+  <h2 style={{ color: 'var(--bg-hero)' }}>Toda solucion comienza en una </h2>
+  <h2 style={{ color: 'var(--green-primary)' }}>Ronda.</h2>
+  
+  <motion.div 
           className={styles.badgeContainer}
           variants={itemVariants}
         >
@@ -155,23 +105,8 @@ const Hero = () => {
             <Users size={15} /> Conocé Ronda
           </ScrollLink>
         </motion.div>
-        
-       
-      </motion.div>
-      
-      {/* Spacer to allow scrolling through the sticky effect */}
-      <div className={styles.spacer}></div>
+</ScrollExpand>
 
-      {/* Organic luminous transition veil into ProjectsSection */}
-      <div className={styles.transitionVeil}>
-        <div className={styles.transitionGlow} />
-        <svg className={styles.transitionCurve} viewBox="0 0 1440 120" fill="none" preserveAspectRatio="none">
-          <path
-            d="M0,40 C360,110 1080,110 1440,40 L1440,120 L0,120 Z"
-            fill="var(--bg-primary)"
-          />
-        </svg>
-      </div>
     </section>
   );
 };

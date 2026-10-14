@@ -28,18 +28,18 @@
   max-width: 680px;
   width: 100%;
 
-  /* glassmorphism oscuro */
-  background: rgba(255, 255, 255, 0.03);
+  /* glassmorphism adaptativo */
+  background: var(--bg-secondary);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
 
   /* borde accent */
-  border: 1px solid rgba(167, 227, 193, 0.18);
+  border: 1px solid var(--glass-border, rgba(167, 227, 193, 0.18));
 
   /* glow verde suave */
   box-shadow:
     0 0 0 1px rgba(167, 227, 193, 0.05),
-    0 24px 60px -12px rgba(0, 0, 0, 0.5),
+    0 24px 60px -12px var(--box-shadow-color, rgba(0, 0, 0, 0.5)),
     0 0 80px -20px rgba(167, 227, 193, 0.12);
 
   position: relative;
@@ -56,12 +56,30 @@
   pointer-events: none;
 }
 
+.marcadeagua {
+  position: absolute;
+  bottom: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: clamp(3rem, 10vw, 5rem);
+  font-weight: 800;
+  letter-spacing: .05em;
+  color: var(--watermark-color, rgba(255, 255, 255, 0.05));
+  text-transform: uppercase;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 0;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
 
 .communityBox:hover {
   transform: translateY(-6px);
   box-shadow:
-    0 0 0 1px rgba(167, 227, 193, 0.12),
-    0 32px 70px -12px rgba(0, 0, 0, 0.6),
+    0 0 0 1px rgba(167, 227, 193, 0.2),
+    0 32px 70px -12px var(--box-shadow-color, rgba(0, 0, 0, 0.6)),
     0 0 100px -10px rgba(167, 227, 193, 0.2);
 }
 
@@ -70,9 +88,9 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background: rgba(167, 227, 193, 0.1);
-  border: 1px solid rgba(167, 227, 193, 0.25);
-  color: var(--green-primary);
+  background: rgba(167, 227, 193, 0.12);
+  border: 1px solid rgba(167, 227, 193, 0.35);
+  color: var(--accent-green, #10b981);
   font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.1em;
@@ -106,7 +124,7 @@
 }
 
 .communityBox p {
-  color: rgba(246, 247, 244, 0.6);
+  color: var(--text-muted, rgba(246, 247, 244, 0.6));
   font-size: 1.05rem;
   line-height: 1.75;
   margin-bottom: 2.2rem;

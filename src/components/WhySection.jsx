@@ -15,6 +15,7 @@ const WhySection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
+          <span className={styles.marcadeagua}>Comunidad</span>
           <h2>Únete a nuestra comunidad</h2>
           <a
             href="https://instagram.com/ronda.it"

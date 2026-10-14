@@ -5,7 +5,9 @@ import SplashScreen from './components/SplashScreen';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import ProjectsSection from './components/ProjectsSection';
+import ProcessSection from './components/ProcessSection';
 import TeamSection from './components/TeamSection';
+import FaqSection from './components/FaqSection';
 import ContactForm from './components/ContanctForm';
 import Footer from './components/Footer';
 import WhySection from './components/WhySection';
@@ -15,9 +17,11 @@ const Home = () => (
   <main>
     <Hero />
     <ProjectsSection />
-    <TeamSection />
     <WhySection />
-    <ContactForm />
+    <TeamSection />
+    <ProcessSection />   
+    <FaqSection />
+    <ContactForm />  
   </main>
 );
 

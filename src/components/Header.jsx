@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link as ScrollLink } from 'react-scroll';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronRight, Menu, X } from 'lucide-react';
+import { ChevronRight, Menu, X, Sun, Moon } from 'lucide-react';
 import styles from '../styles/Header.module.css';
 import VariableProximity from './VariableProximity';
 import logoImg from '../assets/logo-ronda.webp';
@@ -11,7 +11,9 @@ const HERO_ANIM_END = 650;
 const navItems = [
   { label: 'Inicio', to: 'hero' },
   { label: 'Proyectos', to: 'projects' },
+  { label: 'Proceso', to: 'process' },
   { label: 'Equipo', to: 'team' },
+  { label: 'FAQ', to: 'faq' },
   { label: 'Comunidad', to: 'community' }
 ];
 
@@ -19,6 +21,17 @@ const Header = () => {
   const [logoVisible, setLogoVisible] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [hoveredIndex, setHoveredIndex] = useState(null);
+  const [theme, setTheme] = useState(() => {
+    return document.documentElement.getAttribute('data-theme') || 'light';
+  });
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -83,8 +96,17 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* Botón CTA desktop */}
+          {/* Acciones Header: ThemeToggle y Contacto */}
           <div className={styles.ctaWrapper}>
+            <button
+              className={styles.themeToggleBtn}
+              onClick={toggleTheme}
+              title={theme === 'dark' ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro'}
+              aria-label="Cambiar tema de la página"
+            >
+              {theme === 'dark' ? <Sun size={17} /> : <Moon size={17} />}
+            </button>
+
             <ScrollLink to="contact" smooth={true} duration={500} offset={-90}>
               <button className={styles.islandContactBtn}>
                 <span>Contacto</span>

@@ -85,14 +85,17 @@ const ProjectsSection = () => {
     <section as="section" id="projects" className={styles.projectsSection}>
       <div className="gridOverlay" />
       <div className="container">
-        <motion.h2 
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          Proyectos de Desarrollo de Software
-        </motion.h2>
+        <div className={styles.headerContainer}>
+          <span className={styles.marcadeagua}>Proyectos</span>
+          <motion.h2 
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            PROYECTOS DESTACADOS
+          </motion.h2>
+        </div>
         <motion.p 
           className={styles.sectionSubtitle}
           initial={{ opacity: 0 }}

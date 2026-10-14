@@ -112,14 +112,14 @@
 }
 
 .techBadge {
-  background: #a7e3c187;
-  border: 1px solid rgba(151, 215, 121, 0.2);
-  color: var(--text-medium);
+  background: var(--input-bg, #a7e3c187);
+  border: 1px solid var(--card-border, rgba(151, 215, 121, 0.2));
+  color: var(--text-dark);
   padding: 0.5rem 1.2rem;
   border-radius: 9999px;
   font-size: 0.9rem;
   font-weight: 500;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 6px -1px var(--box-shadow-color, rgba(0, 0, 0, 0.05));
   backdrop-filter: blur(10px);
 }
 

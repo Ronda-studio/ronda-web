@@ -2,18 +2,26 @@
 
 /* Reset y variables globales */
 :root {
-  /* Paleta de colores */
-  /*negro 0f1722, accent a7e3c1*, blanco f6f7f4*/
-  --bg-primary: rgb(15, 23, 34);
-  --bg-secondary: #232e3c;
+  /* Paleta Ronda */
   --green-primary: #77eed1;
   --green-hover: #5dbca5;
-  --text-dark: #f6f7f4;
-  --text-medium: #f6f7f4;
   --accent-green: #10b981;
   --border-light: #e5e7eb;
-  --glass-bg: #a7e3c187;
-  --glass-border: rgba(255, 255, 255, 0.5);
+  
+  /* Tema Oscuro (Default) */
+  --bg-hero: #f6f7f4;
+  --bg-primary: rgb(15, 23, 34);
+  --bg-secondary: #232e3c;
+  --bg-card: rgba(35, 46, 60, 0.4);
+  --text-dark: #f6f7f4;
+  --text-medium: #cbd5e1;
+  --text-muted: rgba(246, 247, 244, 0.65);
+  --glass-bg: rgba(15, 23, 34, 0.8);
+  --glass-border: rgba(167, 227, 193, 0.2);
+  --card-border: rgba(255, 255, 255, 0.08);
+  --watermark-color: rgba(255, 255, 255, 0.045);
+  --box-shadow-color: rgba(0, 0, 0, 0.4);
+  --input-bg: rgba(15, 23, 34, 0.7);
 
   /* Espaciados */
   --spacing-xs: 0.5rem;
@@ -25,6 +33,24 @@
   /* Tipografía */
   --font-family-sans: 'Inter', system-ui, -apple-system, sans-serif;
   --font-family-heading: 'Outfit', system-ui, -apple-system, sans-serif;
+}
+
+/* Tema Claro (Fondo blanco pulcro y serio con acentos Ronda) */
+[data-theme='light'] {
+   --bg-hero: #f6f7f4;
+  --bg-primary: #fffffb;
+  --bg-secondary: #f8fafc;
+  --bg-card: #ffffff;
+  --text-dark: #0f172a;
+  --text-medium: #334155;
+  --text-muted: #64748b;
+  --glass-bg: rgba(255, 255, 255, 0.85);
+  --glass-border: rgba(119, 238, 209, 0.5);
+  --card-border: rgba(15, 23, 42, 0.08);
+  --watermark-color: rgba(15, 23, 42, 0.045);
+  --box-shadow-color: rgba(15, 23, 42, 0.08);
+  --input-bg: #f8fafc;
+  --border-light: #e2e8f0;
 }
 
 * {
@@ -123,26 +149,17 @@ h3 {
 }
 
 .btn-blur {
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(246, 247, 244, 0.1);
-  color: white;
+  background: var(--input-bg, rgba(255, 255, 255, 0.05));
+  border: 1px solid var(--card-border, rgba(246, 247, 244, 0.15));
+  color: var(--text-dark, white);
+  box-shadow: 0 4px 12px var(--box-shadow-color, rgba(0, 0, 0, 0.05));
 }
 
 .btn-blur:hover {
-  background: rgba(255, 255, 255, 0.35);
-   transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
+  background: rgba(119, 238, 209, 0.18);
+  border-color: var(--green-primary);
+  color: var(--accent-green, #10b981);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(119, 238, 209, 0.25);
 }
 
-.gridOverlay {
-  position: absolute;
-  inset: 0;
-  background-size: 50px 50px;
-  background-image:
-    linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
-  mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
-  -webkit-mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
-  z-index: 0;
-  pointer-events: none;
-}

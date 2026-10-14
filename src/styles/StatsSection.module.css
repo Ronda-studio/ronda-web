@@ -17,9 +17,9 @@
   padding: 2.5rem 2rem;
   border-radius: 24px;
   text-align: center;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  box-shadow: 0 4px 15px var(--box-shadow-color, rgba(0, 0, 0, 0.05));
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  border: 1px solid var(--border-light);
+  border: 1px solid var(--card-border, var(--border-light));
   position: relative;
   overflow: hidden;
   z-index: 1;
@@ -40,7 +40,7 @@
 
 .statCard:hover {
   transform: translateY(-8px);
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 20px 25px -5px var(--box-shadow-color, rgba(0, 0, 0, 0.1));
 }
 
 .statCard:hover::after {
